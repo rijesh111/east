@@ -38,7 +38,6 @@ for i in range(0, geomtery.shape[2]):
         rectangles.append((top_x, top_y, bottom_x, bottom_y))
         confidence_scores.append(float(scores[0][0][i][j]))
 
-#
 indices = cv2.dnn.NMSBoxes(rectangles, confidence_scores, score_threshold=0.5, nms_threshold=0.5)
 
 img_copy = img.copy()
