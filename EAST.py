@@ -42,9 +42,8 @@ for i in range(0, geomtery.shape[2]):
 indices = cv2.dnn.NMSBoxes(rectangles, confidence_scores, score_threshold=0.5, nms_threshold=0.5)
 
 img_copy = img.copy()
-for i in indices:
-    index = i[0]  
-    (x1, y1, x2, y2) = rectangles[index]
+for index in indices:
+    x1, y1, x2, y2 = rectangles[index]
     x1 = int(x1 * w_ratio)
     y1 = int(y1 * h_ratio)
     x2 = int(x2 * w_ratio)
